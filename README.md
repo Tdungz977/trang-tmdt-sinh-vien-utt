@@ -1,4 +1,4 @@
-# UTT PASS - Sàn Thương Mại Điện Tử Sinh Viên UTT
+# CAMPUS MART - Sàn Thương Mại Điện Tử Sinh Viên UTT
 > **Đồ dùng sinh viên UTT đã qua sử dụng & Sản phẩm handmade thủ công**  
 > Dự án phục vụ cộng đồng sinh viên Trường Đại học Công nghệ Giao thông Vận tải (UTT).
 
@@ -6,7 +6,7 @@
 
 ## 🌟 Giới Thiệu Dự Án
 
-**UTT Pass** là nền tảng thương mại điện tử kết nối các bạn sinh viên UTT nhằm:
+**Campus Mart** là nền tảng thương mại điện tử kết nối các bạn sinh viên UTT nhằm:
 - **Tiết kiệm chi phí**: Mua đồng phục, giáo trình với giá rẻ hơn 50% - 70% so với mua mới.
 - **Giảm lãng phí**: Tận dụng đồng phục, giáo trình đã hoàn thành tín chỉ nhường lại cho các bạn tân sinh viên khóa mới (K74, K75, K76...).
 - **Giao dịch an toàn & 0đ Phí ship**: Giao nhận trực tiếp tại khuôn viên trường (Sảnh Nhà A, Nhà B, Cổng số 1 Triều Khúc, Ký túc xá).
@@ -67,4 +67,4 @@ Truy cập: `http://localhost:3000/`
 - **Assets**: Bộ hình ảnh thực tế và Logo trích xuất từ tài liệu dự án UTT.
 
 ---
-© 2026 UTT Pass - Dự án Đồ Dùng & Handmade Sinh Viên UTT.
+© 2026 Campus Mart - Dự án Đồ Dùng & Handmade Sinh Viên UTT.
