@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UTT PASS | Sàn Đồ Dùng & Handmade Sinh Viên UTT</title>
+  <meta name="description" content="Sàn thương mại điện tử sinh viên UTT - Chuyên thanh lý đồng phục UTT, giáo trình tài liệu học tập, khăn len handmade và hoa quà tặng giá sinh viên. Nhận đồ trực tiếp tại 54 Triều Khúc.">
+  <meta name="keywords" content="đồng phục UTT, giáo trình UTT, tài liệu sinh viên UTT, khăn len handmade, hoa handmade, thanh lý đồ cũ UTT">
+  
+  <!-- Google Fonts: Be Vietnam Pro & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= TOP UTILITY ANNOUNCEMENT BAR ================= -->
+  <div class="top-announcement-bar" id="announcementBar">
+    <div class="container announcement-content">
+      <div class="announcement-left">
+        <span class="badge-pill pulse"><i class="fa-solid fa-graduation-cap"></i> Tân Sinh Viên UTT</span>
+        <span>Tiết kiệm đến <strong>70%</strong> chi phí đồng phục & giáo trình | Điểm hẹn nhận đồ: <strong>54 Triều Khúc & KTX</strong></span>
+      </div>
+      <div class="announcement-right">
+        <a href="#quy-che" onclick="openPolicyModal()"><i class="fa-solid fa-shield-halved"></i> Quy định đổi trả 24h</a>
+        <span class="divider">|</span>
+        <a href="#hotline" onclick="openContactSupport()"><i class="fa-solid fa-headset"></i> Hỗ trợ sinh viên: 098.765.4321</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MAIN HEADER & NAVIGATION ================= -->
+  <header class="main-header" id="mainHeader">
+    <div class="container header-container">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="brand-identity" id="brandLogo">
+        <div class="logo-wrapper">
+          <img src="assets/image6.jpeg" alt="Logo UTT Pass" class="brand-logo-img">
+        </div>
+        <div class="brand-text-group">
+          <div class="brand-name">UTT <span class="accent-text">PASS</span></div>
+          <div class="brand-tagline">Đồ Dùng & Handmade Sinh Viên UTT</div>
+        </div>
+      </a>
+
+      <!-- Campus Location Quick Switcher -->
+      <div class="campus-selector-pill" onclick="switchCampusModal()" title="Chọn cơ sở nhận đồ">
+        <i class="fa-solid fa-location-dot accent-icon"></i>
+        <div class="campus-info">
+          <span class="campus-label">Điểm nhận đồ:</span>
+          <span class="campus-active" id="activeCampusDisplay">CS 54 Triều Khúc (Hà Nội)</span>
+        </div>
+        <i class="fa-solid fa-chevron-down caret-icon"></i>
+      </div>
+
+      <!-- Live Search Box with Category Dropdown -->
+      <div class="search-omnibox" id="searchOmnibox">
+        <div class="search-category-select">
+          <select id="headerCategorySelect" aria-label="Chọn danh mục tìm kiếm">
+            <option value="all">Tất cả danh mục</option>
+            <option value="dong-phuc">🧥 Đồng phục UTT</option>
+            <option value="giao-trinh">📚 Giáo trình & Tài liệu</option>
+            <option value="khan-len">🧣 Khăn len Handmade</option>
+            <option value="hoa-handmade">💐 Hoa quà tặng Handmade</option>
+          </select>
+        </div>
+        <div class="search-input-field">
+          <input type="text" id="globalSearchInput" placeholder="Tìm áo khoác UTT, giáo trình Triết, khăn len, hoa..." autocomplete="off">
+          <button type="button" class="btn-clear-search" id="btnClearSearch" title="Xóa tìm kiếm"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <button type="button" class="btn-search-submit" id="btnSearchSubmit" title="Tìm kiếm ngay">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span class="search-btn-text">Tìm kiếm</span>
+        </button>
+
+        <!-- Live Suggestions Dropdown -->
+        <div class="search-suggestions-dropdown" id="searchSuggestions">
+          <div class="suggestion-group">
+            <div class="suggestion-title"><i class="fa-solid fa-fire"></i> Từ khóa được tìm nhiều:</div>
+            <div class="suggestion-chips">
+              <span class="chip" onclick="quickSearch('Áo khoác UTT')">Áo khoác UTT</span>
+              <span class="chip" onclick="quickSearch('Áo polo')">Áo polo UTT</span>
+              <span class="chip" onclick="quickSearch('Kinh tế chính trị')">Kinh tế chính trị</span>
+              <span class="chip" onclick="quickSearch('Triết học')">Triết học</span>
+              <span class="chip" onclick="quickSearch('Khăn len')">Khăn len handmade</span>
+              <span class="chip" onclick="quickSearch('Hoa kẽm nhung')">Hoa tốt nghiệp</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Header Action Controls -->
+      <div class="header-actions">
+        <!-- Post Listing Button -->
+        <button type="button" class="btn-post-listing" id="btnOpenPostModal" onclick="openPostListingModal()">
+          <i class="fa-solid fa-circle-plus"></i>
+          <span>Đăng thanh lý</span>
+        </button>
+
+        <!-- Wishlist Button -->
+        <button type="button" class="action-icon-btn" id="btnWishlist" onclick="toggleWishlistDrawer()" title="Sản phẩm yêu thích">
+          <i class="fa-regular fa-heart"></i>
+          <span class="counter-badge" id="wishlistCount">0</span>
+          <span class="action-btn-sub">Yêu thích</span>
+        </button>
+
+        <!-- Cart Button -->
+        <button type="button" class="action-icon-btn cart-btn-accent" id="btnOpenCart" onclick="openCartDrawer()" title="Giỏ hàng sinh viên">
+          <i class="fa-solid fa-basket-shopping"></i>
+          <span class="counter-badge pulse-badge" id="cartCount">0</span>
+          <span class="action-btn-sub">Giỏ hàng</span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button type="button" class="btn-mobile-menu" id="btnMobileMenu" onclick="toggleMobileMenu()" title="Mở menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ================= SECONDARY CATEGORY STRIP ================= -->
+  <nav class="category-nav-bar" id="categoryNavBar">
+    <div class="container nav-strip-container">
+      <div class="nav-category-menu" id="navCategoryMenu">
+        <button type="button" class="nav-item active" data-category="all" onclick="filterByCategory('all', this)">
+          <i class="fa-solid fa-border-all"></i> Tất cả sản phẩm
+        </button>
+        <button type="button" class="nav-item" data-category="dong-phuc" onclick="filterByCategory('dong-phuc', this)">
+          <i class="fa-solid fa-shirt"></i> Đồng phục UTT (50k - 170k)
+        </button>
+        <button type="button" class="nav-item" data-category="giao-trinh" onclick="filterByCategory('giao-trinh', this)">
+          <i class="fa-solid fa-book-open"></i> Giáo trình & Tài liệu (10k - 25k)
+        </button>
+        <button type="button" class="nav-item" data-category="khan-len" onclick="filterByCategory('khan-len', this)">
+          <i class="fa-solid fa-mitten"></i> Khăn len Handmade
+        </button>
+        <button type="button" class="nav-item" data-category="hoa-handmade" onclick="filterByCategory('hoa-handmade', this)">
+          <i class="fa-solid fa-spa"></i> Hoa Handmade & Quà tặng
+        </button>
+        <button type="button" class="nav-item highlight-tag" data-condition="A" onclick="filterByCondition('A', this)">
+          <i class="fa-solid fa-star"></i> Đồ Hạng A (Mới 95-99%)
+        </button>
+      </div>
+      <div class="nav-strip-right">
+        <button type="button" class="btn-policy-link" onclick="openPolicyModal()">
+          <i class="fa-solid fa-circle-question"></i> Hướng dẫn giao dịch tại UTT
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= HERO SHOWCASE SECTION ================= -->
+  <section class="hero-section" id="heroSection">
+    <div class="container hero-container">
+      <div class="hero-banner-card">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-dot"></span> Dự án đồ dùng sinh viên UTT đã qua sử dụng
+          </div>
+          <h1 class="hero-title">
+            Tiết kiệm chi phí, kết nối sinh viên UTT qua từng món đồ cũ & handmade
+          </h1>
+          <p class="hero-description">
+            Mua bán áo khoác, áo polo, đồng phục thể chất UTT chính hãng; trao đổi giáo trình đại cương giá chỉ từ <strong>10.000đ</strong>; cùng các mẫu khăn len, hoa quà tặng thủ công do chính sinh viên UTT tự tay đan bó.
+          </p>
+
+          <div class="hero-features-chips">
+            <div class="feature-chip"><i class="fa-solid fa-money-bill-transfer"></i> Rẻ hơn mua mới 50 - 70%</div>
+            <div class="feature-chip"><i class="fa-solid fa-handshake"></i> Hẹn lấy tại Cổng trường 0đ Ship</div>
+            <div class="feature-chip"><i class="fa-solid fa-certificate"></i> Phân loại chuẩn Hạng A - B - C</div>
+            <div class="feature-chip"><i class="fa-solid fa-rotate-left"></i> Đổi trả 24h nếu sai size/môn</div>
+          </div>
+
+          <div class="hero-action-buttons">
+            <button type="button" class="btn btn-primary" onclick="scrollToSection('catalogSection')">
+              <i class="fa-solid fa-bag-shopping"></i> Khám phá sản phẩm ngay
+            </button>
+            <button type="button" class="btn btn-secondary" onclick="openPostListingModal()">
+              <i class="fa-solid fa-camera"></i> Đăng thanh lý đồ cũ của bạn
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="visual-card-grid">
+            <div class="visual-card-item card-preview-1" onclick="filterByCategory('dong-phuc')">
+              <img src="assets/image1.jpeg" alt="Đồng phục UTT" class="visual-img">
+              <div class="visual-caption">
+                <span class="caption-tag">Đồng phục UTT</span>
+                <span class="caption-price">Từ 50.000đ</span>
+              </div>
+            </div>
+            <div class="visual-card-item card-preview-2" onclick="filterByCategory('giao-trinh')">
+              <img src="assets/image3.jpeg" alt="Giáo trình UTT" class="visual-img">
+              <div class="visual-caption">
+                <span class="caption-tag">Giáo trình & Sách</span>
+                <span class="caption-price">Từ 10.000đ</span>
+              </div>
+            </div>
+            <div class="visual-card-item card-preview-3" onclick="filterByCategory('khan-len')">
+              <img src="assets/image4.jpeg" alt="Khăn len Handmade" class="visual-img">
+              <div class="visual-caption">
+                <span class="caption-tag">Khăn len handmade</span>
+                <span class="caption-price">Tự đan theo yêu cầu</span>
+              </div>
+            </div>
+            <div class="visual-card-item card-preview-4" onclick="filterByCategory('hoa-handmade')">
+              <img src="assets/image5.jpeg" alt="Hoa quà tặng" class="visual-img">
+              <div class="visual-caption">
+                <span class="caption-tag">Hoa & Quà tặng SV</span>
+                <span class="caption-price">Kèm viết thiệp free</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROBLEM SOLVING & VALUE PROPOSITION ================= -->
+  <section class="value-pillars-section">
+    <div class="container">
+      <div class="section-header-centered">
+        <span class="sub-heading-badge"><i class="fa-solid fa-shield-cat"></i> Giải Pháp Cho Sinh Viên</span>
+        <h2 class="section-title">Giải Quyết Triệt Để Mối Lo Mua Đồ Cũ Sinh Viên</h2>
+        <p class="section-subtitle">Dựa trên nghiên cứu thực tế từ tài liệu khảo sát đồ dùng sinh viên trường ĐH Công nghệ GTVT</p>
+      </div>
+
+      <div class="pillars-grid">
+        <!-- Pillar 1 -->
+        <div class="pillar-card">
+          <div class="pillar-icon bg-blue-tint">
+            <i class="fa-solid fa-sliders"></i>
+          </div>
+          <h3 class="pillar-title">Minh Bạch Phân Loại A - B - C</h3>
+          <p class="pillar-desc">
+            Không còn nỗi lo đồ bạc màu, cũ sờn bất ngờ. Mọi món đồ đều được xếp hạng nghiêm ngặt: <strong>Hạng A</strong> (95-99% như mới), <strong>Hạng B</strong> (85-95% tốt), <strong>Hạng C</strong> (75-85% kinh tế).
+          </p>
+          <div class="pillar-badge"><i class="fa-solid fa-check"></i> Ảnh thật 100% người bán</div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="pillar-card">
+          <div class="pillar-icon bg-orange-tint">
+            <i class="fa-solid fa-book-bookmark"></i>
+          </div>
+          <h3 class="pillar-title">Chuẩn Mẫu Đồng Phục & Môn Học</h3>
+          <p class="pillar-desc">
+            Đảm bảo áo polo/áo khoác đúng mẫu quy chuẩn UTT hiện hành. Giáo trình chuẩn mã môn đào tạo tín chỉ UTT (Triết, Kinh tế chính trị, Xác suất thống kê, Kế toán).
+          </p>
+          <div class="pillar-badge"><i class="fa-solid fa-check"></i> Đúng phiên bản đang học</div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="pillar-card">
+          <div class="pillar-icon bg-green-tint">
+            <i class="fa-solid fa-map-location-dot"></i>
+          </div>
+          <h3 class="pillar-title">Giao Nhận Trực Tiếp Tại Trường</h3>
+          <p class="pillar-desc">
+            Hẹn gặp lấy đồ tại Cổng trường 54 Triều Khúc, Sảnh nhà A/B hoặc KTX. Thử áo vừa vặn, lật xem sách ưng ý mới thanh toán. <strong>Không tốn 1 đồng phí vận chuyển!</strong>
+          </p>
+          <div class="pillar-badge"><i class="fa-solid fa-check"></i> 0đ phí ship nội khu</div>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="pillar-card">
+          <div class="pillar-icon bg-purple-tint">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+          </div>
+          <h3 class="pillar-title">Ủng Hộ Khởi Nghiệp Sinh Viên</h3>
+          <p class="pillar-desc">
+            Không gian dành riêng cho các bạn sinh viên khéo tay bán sản phẩm thủ công: Khăn len đan tay ấm áp mùa đông và hoa kẽm nhung rực rỡ các dịp lễ tốt nghiệp, 20/10, 8/3.
+          </p>
+          <div class="pillar-badge"><i class="fa-solid fa-check"></i> Cá nhân hóa theo yêu cầu</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MAIN CATALOG & FILTER WORKSPACE ================= -->
+  <section class="catalog-section" id="catalogSection">
+    <div class="container catalog-layout">
+
+      <!-- LEFT SIDEBAR FILTERS -->
+      <aside class="catalog-sidebar" id="catalogSidebar">
+        <div class="sidebar-header">
+          <h3 class="sidebar-title"><i class="fa-solid fa-filter"></i> Bộ Lọc Tìm Kiếm</h3>
+          <button type="button" class="btn-reset-filters" onclick="resetAllFilters()">Đặt lại</button>
+        </div>
+
+        <!-- Filter: Category -->
+        <div class="filter-group">
+          <h4 class="filter-group-title">Danh mục sản phẩm</h4>
+          <div class="filter-options-list" id="categoryFilterList">
+            <label class="filter-checkbox-item">
+              <input type="radio" name="filterCat" value="all" checked onchange="handleFilterChange()">
+              <span class="custom-radio"></span>
+              <span class="label-name">Tất cả sản phẩm</span>
+              <span class="count-badge" id="countAllCat">14</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="radio" name="filterCat" value="dong-phuc" onchange="handleFilterChange()">
+              <span class="custom-radio"></span>
+              <span class="label-name">Đồng phục UTT</span>
+              <span class="count-badge" id="countDongPhuc">4</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="radio" name="filterCat" value="giao-trinh" onchange="handleFilterChange()">
+              <span class="custom-radio"></span>
+              <span class="label-name">Giáo trình & Sách</span>
+              <span class="count-badge" id="countGiaoTrinh">5</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="radio" name="filterCat" value="khan-len" onchange="handleFilterChange()">
+              <span class="custom-radio"></span>
+              <span class="label-name">Khăn len Handmade</span>
+              <span class="count-badge" id="countKhanLen">3</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="radio" name="filterCat" value="hoa-handmade" onchange="handleFilterChange()">
+              <span class="custom-radio"></span>
+              <span class="label-name">Hoa & Quà Handmade</span>
+              <span class="count-badge" id="countHoa">2</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Filter: Condition Grading (A - B - C) -->
+        <div class="filter-group">
+          <h4 class="filter-group-title">Tình trạng sản phẩm</h4>
+          <div class="filter-options-list">
+            <label class="filter-checkbox-item">
+              <input type="checkbox" class="cond-filter" value="A" onchange="handleFilterChange()">
+              <span class="custom-checkbox"></span>
+              <span class="badge-grade grade-a">Hạng A</span>
+              <span class="label-sub">Mới 95 - 99%</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" class="cond-filter" value="B" onchange="handleFilterChange()">
+              <span class="custom-checkbox"></span>
+              <span class="badge-grade grade-b">Hạng B</span>
+              <span class="label-sub">Tốt 85 - 95%</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" class="cond-filter" value="C" onchange="handleFilterChange()">
+              <span class="custom-checkbox"></span>
+              <span class="badge-grade grade-c">Hạng C</span>
+              <span class="label-sub">Kinh tế 75 - 85%</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" class="cond-filter" value="Handmade" onchange="handleFilterChange()">
+              <span class="custom-checkbox"></span>
+              <span class="badge-grade grade-handmade">Thủ công</span>
+              <span class="label-sub">Mới 100% tự làm</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Filter: Price Range -->
+        <div class="filter-group">
+          <h4 class="filter-group-title">Khoảng giá sinh viên</h4>
+          <div class="filter-options-list">
+            <label class="filter-checkbox-item">
+              <input type="radio" name="filterPrice" value="all" checked onchange="handleFilterChange()">
+              <span class="custom-radio"></span>
+              <span class="label-name">Tất cả mức giá</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="radio" name="filterPrice" value="under-30k" onchange="handleFilterChange()">
+              <span class="custom-radio"></span>
+              <span class="label-name">Dưới 30.000đ (Sách giáo trình)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="radio" name="filterPrice" value="30k-70k" onchange="handleFilterChange()">
+              <span class="custom-radio"></span>
+              <span class="label-name">30.000đ - 70.000đ (Áo polo, hoa mini)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="radio" name="filterPrice" value="70k-120k" onchange="handleFilterChange()">
+              <span class="custom-radio"></span>
+              <span class="label-name">70.000đ - 120.000đ (Khăn len, combo sách)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="radio" name="filterPrice" value="above-120k" onchange="handleFilterChange()">
+              <span class="custom-radio"></span>
+              <span class="label-name">Trên 120.000đ (Áo khoác ấm UTT)</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Filter: Size (Clothing Only) -->
+        <div class="filter-group">
+          <h4 class="filter-group-title">Kích thước / Size đồng phục</h4>
+          <div class="size-buttons-group">
+            <button type="button" class="btn-size-chip" data-size="S" onclick="toggleSizeFilter('S', this)">S</button>
+            <button type="button" class="btn-size-chip" data-size="M" onclick="toggleSizeFilter('M', this)">M</button>
+            <button type="button" class="btn-size-chip" data-size="L" onclick="toggleSizeFilter('L', this)">L</button>
+            <button type="button" class="btn-size-chip" data-size="XL" onclick="toggleSizeFilter('XL', this)">XL</button>
+            <button type="button" class="btn-size-chip" data-size="XXL" onclick="toggleSizeFilter('XXL', this)">XXL</button>
+          </div>
+        </div>
+
+        <!-- Sidebar Promo Callout -->
+        <div class="sidebar-help-box">
+          <div class="help-box-header"><i class="fa-solid fa-recycle"></i> Bạn có đồ cần bán?</div>
+          <p class="help-box-text">Đăng ngay áo đồng phục không dùng, giáo trình đã thi xong để nhường lại cho các bạn khóa sau nhé!</p>
+          <button type="button" class="btn btn-outline-white" onclick="openPostListingModal()">Đăng tin miễn phí</button>
+        </div>
+      </aside>
+
+      <!-- RIGHT PRODUCT LISTING AREA -->
+      <main class="catalog-main">
+        <!-- Control Bar (Results Count & Sorting) -->
+        <div class="catalog-control-bar">
+          <div class="results-count-wrapper">
+            <span class="results-text">Hiển thị <strong id="resultsCount">0</strong> sản phẩm phù hợp</span>
+            <span class="filter-tag-pill" id="activeFilterTag" style="display: none;">
+              <span id="activeFilterLabel"></span>
+              <i class="fa-solid fa-xmark" onclick="clearSpecificFilter()"></i>
+            </span>
+          </div>
+
+          <div class="sort-selector-wrapper">
+            <label for="sortSelect" class="sort-label">Sắp xếp theo:</label>
+            <select id="sortSelect" class="sort-select" onchange="handleSortChange()">
+              <option value="featured">Nổi bật nhất</option>
+              <option value="price-asc">Giá: Thấp đến Cao</option>
+              <option value="price-desc">Giá: Cao đến Thấp</option>
+              <option value="condition-best">Tình trạng mới nhất (Hạng A)</option>
+              <option value="name-asc">Tên A → Z</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- PRODUCTS GRID CONTAINER -->
+        <div class="products-grid" id="productsGrid">
+          <!-- Dynamically populated by app.js -->
+        </div>
+
+        <!-- EMPTY STATE (Shown when no items match filters) -->
+        <div class="empty-state-card" id="emptyState" style="display: none;">
+          <div class="empty-state-icon"><i class="fa-solid fa-box-open"></i></div>
+          <h3 class="empty-state-title">Không tìm thấy sản phẩm phù hợp</h3>
+          <p class="empty-state-desc">Hãy thử thay đổi từ khóa tìm kiếm, nới lỏng bộ lọc khoảng giá hoặc chọn danh mục khác nhé.</p>
+          <button type="button" class="btn btn-primary" onclick="resetAllFilters()">Xem lại tất cả sản phẩm</button>
+        </div>
+      </main>
+
+    </div>
+  </section>
+
+  <!-- ================= HOW IT WORKS (HƯỚNG DẪN GIAO DỊCH UTT) ================= -->
+  <section class="how-it-works-section" id="quyTrinhSection">
+    <div class="container">
+      <div class="section-header-centered">
+        <span class="sub-heading-badge"><i class="fa-solid fa-route"></i> Quy Trình 4 Bước</span>
+        <h2 class="section-title">Cách Thức Mua Bán Đơn Giản Tại UTT</h2>
+        <p class="section-subtitle">Tiết kiệm thời gian - An toàn tuyệt đối - Trực tiếp trong khuôn viên trường</p>
+      </div>
+
+      <div class="steps-flow-grid">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <div class="step-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+          <h4 class="step-title">1. Chọn & Lọc Đồ Cần Mua</h4>
+          <p class="step-desc">Tìm kiếm đồng phục theo size, chọn giáo trình theo môn học, hoặc xem các mẫu khăn len, hoa quà tặng thủ công.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <div class="step-icon"><i class="fa-solid fa-cart-plus"></i></div>
+          <h4 class="step-title">2. Đặt Đơn Hoặc Nhắn Zalo</h4>
+          <p class="step-desc">Thêm vào giỏ hàng để đặt hẹn nhanh hoặc bấm nút "Nhắn Zalo" để chat trực tiếp với bạn sinh viên đang bán.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <div class="step-icon"><i class="fa-solid fa-school"></i></div>
+          <h4 class="step-title">3. Hẹn Lấy Tại Sảnh Trường</h4>
+          <p class="step-desc">Hẹn gặp trực tiếp tại Cổng 54 Triều Khúc, Sảnh nhà A/B hoặc KTX. Thử áo và kiểm tra giáo trình tận tay.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">04</div>
+          <div class="step-icon"><i class="fa-solid fa-handshake-simple"></i></div>
+          <h4 class="step-title">4. Hài Lòng & Thanh Toán</h4>
+          <p class="step-desc">Thanh toán tiền mặt hoặc chuyển khoản MoMo/QR ngân hàng. Hưởng chính sách hỗ trợ đổi trả trong 24 giờ nếu có sự cố.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="main-footer">
+    <div class="container footer-container">
+      <div class="footer-col col-brand">
+        <div class="footer-logo">
+          <img src="assets/image6.jpeg" alt="Logo UTT Pass" class="footer-logo-img">
+          <span class="footer-brand-title">UTT <span class="accent-text">PASS</span></span>
+        </div>
+        <p class="footer-about">
+          Dự án Sàn thương mại điện tử Đồ dùng sinh viên UTT đã qua sử dụng và đồ handmade thủ công. Hướng đến mục tiêu giảm thiểu lãng phí, tiết kiệm chi phí học tập cho sinh viên Trường Đại học Công nghệ Giao thông Vận tải.
+        </p>
+        <div class="footer-tags">
+          <span class="tag">#SinhVienUTT</span>
+          <span class="tag">#DongPhucUTT</span>
+          <span class="tag">#GiaoTrinhUTT</span>
+          <span class="tag">#TrieuKhuc</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Danh Mục Đồ Cũ & Mới</h4>
+        <ul class="footer-links-list">
+          <li><a href="javascript:void(0)" onclick="filterByCategory('dong-phuc')"><i class="fa-solid fa-angle-right"></i> Áo khoác & Áo polo UTT</a></li>
+          <li><a href="javascript:void(0)" onclick="filterByCategory('dong-phuc')"><i class="fa-solid fa-angle-right"></i> Quần áo thể dục thể chất UTT</a></li>
+          <li><a href="javascript:void(0)" onclick="filterByCategory('giao-trinh')"><i class="fa-solid fa-angle-right"></i> Giáo trình Triết, Kinh tế chính trị</a></li>
+          <li><a href="javascript:void(0)" onclick="filterByCategory('giao-trinh')"><i class="fa-solid fa-angle-right"></i> Sách Xác suất thống kê, Kế toán</a></li>
+          <li><a href="javascript:void(0)" onclick="filterByCategory('khan-len')"><i class="fa-solid fa-angle-right"></i> Khăn len handmade tự đan tay</a></li>
+          <li><a href="javascript:void(0)" onclick="filterByCategory('hoa-handmade')"><i class="fa-solid fa-angle-right"></i> Bó hoa kẽm nhung tốt nghiệp</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Chính Sách & Hỗ Trợ</h4>
+        <ul class="footer-links-list">
+          <li><a href="javascript:void(0)" onclick="openPolicyModal()"><i class="fa-solid fa-angle-right"></i> Quy định phân loại Hạng A - B - C</a></li>
+          <li><a href="javascript:void(0)" onclick="openPolicyModal()"><i class="fa-solid fa-angle-right"></i> Cam kết đổi trả hàng trong 24 giờ</a></li>
+          <li><a href="javascript:void(0)" onclick="openPolicyModal()"><i class="fa-solid fa-angle-right"></i> Hướng dẫn thử size tại sảnh trường</a></li>
+          <li><a href="javascript:void(0)" onclick="openPostListingModal()"><i class="fa-solid fa-angle-right"></i> Hướng dẫn sinh viên đăng bán đồ</a></li>
+          <li><a href="javascript:void(0)" onclick="openContactSupport()"><i class="fa-solid fa-angle-right"></i> Báo cáo bài đăng không đúng sự thật</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Điểm Hẹn Giao Nhận</h4>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-location-dot contact-icon"></i>
+          <div>
+            <strong>Cơ sở 1 (Trụ sở chính):</strong><br>
+            Số 54 Triều Khúc, P. Thanh Xuân Nam, Q. Thanh Xuân, TP. Hà Nội
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-building-columns contact-icon"></i>
+          <div>
+            <strong>Khu vực giao dịch khuyên dùng:</strong><br>
+            Sảnh Nhà A, Cổng bảo vệ số 1, Ký túc xá sinh viên UTT
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-phone contact-icon"></i>
+          <div>
+            <strong>Hỗ trợ / Khiếu nại SV:</strong> 098.765.4321
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="container footer-bottom-container">
+        <div>© 2026 UTT Pass - Dự án Đồ Dùng & Handmade Sinh Viên UTT. Xây dựng vì cộng đồng sinh viên.</div>
+        <div class="footer-bottom-links">
+          <span>Tiết kiệm hơn. Sẻ chia nhiều hơn.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MODAL: QUICK VIEW PRODUCT DETAIL ================= -->
+  <div class="modal-overlay" id="productDetailModal" style="display: none;">
+    <div class="modal-dialog modal-lg">
+      <button type="button" class="btn-close-modal" onclick="closeProductDetailModal()" title="Đóng">&times;</button>
+      <div class="modal-body product-quickview-layout" id="quickViewContent">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL: POST LISTING (ĐĂNG TIN THANH LÝ) ================= -->
+  <div class="modal-overlay" id="postListingModal" style="display: none;">
+    <div class="modal-dialog modal-md">
+      <button type="button" class="btn-close-modal" onclick="closePostListingModal()" title="Đóng">&times;</button>
+      <div class="modal-header-clean">
+        <div class="modal-header-icon"><i class="fa-solid fa-circle-plus"></i></div>
+        <div>
+          <h3 class="modal-title">Đăng Tin Thanh Lý Đồ Dùng / Handmade</h3>
+          <p class="modal-subtitle">Dành riêng cho sinh viên Trường ĐH Công nghệ Giao thông Vận tải (UTT)</p>
+        </div>
+      </div>
+      
+      <form id="postListingForm" onsubmit="handlePostListing(event)" class="post-form">
+        <div class="form-row">
+          <div class="form-group col-12">
+            <label for="postTitle" class="form-label">Tiêu đề sản phẩm <span class="required">*</span></label>
+            <input type="text" id="postTitle" class="form-control" placeholder="VD: Áo khoác UTT mùa đông còn mới 95% size L" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-6">
+            <label for="postCategory" class="form-label">Danh mục <span class="required">*</span></label>
+            <select id="postCategory" class="form-control" required onchange="handlePostCategoryChange()">
+              <option value="dong-phuc">🧥 Đồng phục UTT</option>
+              <option value="giao-trinh">📚 Giáo trình & Tài liệu</option>
+              <option value="khan-len">🧣 Khăn len Handmade</option>
+              <option value="hoa-handmade">💐 Hoa quà tặng Handmade</option>
+            </select>
+          </div>
+          <div class="form-group col-6">
+            <label for="postCondition" class="form-label">Tình trạng <span class="required">*</span></label>
+            <select id="postCondition" class="form-control" required>
+              <option value="A">Hạng A - Mới 95-99% (Rất mới, ít dùng)</option>
+              <option value="B">Hạng B - Tốt 85-95% (Dùng tốt, sạch sẽ)</option>
+              <option value="C">Hạng C - Kinh tế 75-85% (Có dấu vết nhẹ)</option>
+              <option value="Handmade">Mới 100% (Sản phẩm tự làm)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-6">
+            <label for="postPrice" class="form-label">Giá thanh lý (VNĐ) <span class="required">*</span></label>
+            <input type="number" id="postPrice" class="form-control" placeholder="VD: 65000" min="5000" step="1000" required>
+            <small class="form-hint">Nên để rẻ hơn 40-70% so với mua mới để bán nhanh</small>
+          </div>
+          <div class="form-group col-6">
+            <label for="postOriginalPrice" class="form-label">Giá gốc ước tính (VNĐ)</label>
+            <input type="number" id="postOriginalPrice" class="form-control" placeholder="VD: 120000" step="1000">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-6" id="fieldSizeWrapper">
+            <label for="postSize" class="form-label">Kích thước / Size</label>
+            <select id="postSize" class="form-control">
+              <option value="M">Size M</option>
+              <option value="L" selected>Size L</option>
+              <option value="XL">Size XL</option>
+              <option value="S">Size S</option>
+              <option value="XXL">Size XXL</option>
+              <option value="Freesize">Freesize (Sách/Khăn)</option>
+            </select>
+          </div>
+          <div class="form-group col-6">
+            <label for="postCampus" class="form-label">Điểm hẹn giao nhận <span class="required">*</span></label>
+            <select id="postCampus" class="form-control" required>
+              <option value="Sảnh A - 54 Triều Khúc">Sảnh A - 54 Triều Khúc</option>
+              <option value="Cổng số 1 Triều Khúc">Cổng số 1 Triều Khúc</option>
+              <option value="Ký túc xá UTT Triều Khúc">Ký túc xá UTT Triều Khúc</option>
+              <option value="CS Vĩnh Phúc">Cơ sở Vĩnh Phúc</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="postDescription" class="form-label">Mô tả chi tiết & Ưu/Nhược điểm</label>
+          <textarea id="postDescription" class="form-control" rows="3" placeholder="Mô tả cụ thể: số lần mặc, tình trạng khóa kéo, có ghi chú trong sách không, phụ kiện kèm theo..."></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-6">
+            <label for="postSellerName" class="form-label">Tên của bạn <span class="required">*</span></label>
+            <input type="text" id="postSellerName" class="form-control" placeholder="VD: Nguyễn Văn Nam (K74)" required>
+          </div>
+          <div class="form-group col-6">
+            <label for="postPhone" class="form-label">Số điện thoại / Zalo <span class="required">*</span></label>
+            <input type="tel" id="postPhone" class="form-control" placeholder="VD: 0912345678" required>
+          </div>
+        </div>
+
+        <div class="modal-footer-clean">
+          <button type="button" class="btn btn-secondary" onclick="closePostListingModal()">Hủy</button>
+          <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Đăng bài ngay</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= DRAWER: CART & CHECKOUT ================= -->
+  <div class="drawer-overlay" id="cartDrawerOverlay" onclick="closeCartDrawer()"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="drawer-header">
+      <div class="drawer-header-title">
+        <i class="fa-solid fa-basket-shopping"></i>
+        <span>Giỏ Hàng Sinh Viên</span>
+        <span class="drawer-count-badge" id="drawerCartBadge">0</span>
+      </div>
+      <button type="button" class="btn-close-drawer" onclick="closeCartDrawer()">&times;</button>
+    </div>
+
+    <div class="drawer-body">
+      <!-- Empty Cart Message -->
+      <div class="empty-cart-view" id="emptyCartView">
+        <i class="fa-solid fa-cart-shopping empty-icon"></i>
+        <p class="empty-text">Giỏ hàng của bạn đang trống</p>
+        <p class="empty-sub">Hãy lựa chọn đồng phục, giáo trình hoặc đồ handmade để thêm vào đây nhé!</p>
+        <button type="button" class="btn btn-primary" onclick="closeCartDrawer(); scrollToSection('catalogSection')">Mua sắm ngay</button>
+      </div>
+
+      <!-- Cart Items List -->
+      <div class="cart-items-list" id="cartItemsList" style="display: none;">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <!-- Checkout Form Section (when items exist) -->
+      <div class="checkout-form-section" id="checkoutSection" style="display: none;">
+        <h4 class="checkout-section-title"><i class="fa-solid fa-truck-fast"></i> Thông Tin Nhận Đồ Tại UTT</h4>
+        <div class="form-group">
+          <input type="text" id="orderBuyerName" class="form-control form-control-sm" placeholder="Họ và tên sinh viên *" required>
+        </div>
+        <div class="form-group">
+          <input type="tel" id="orderBuyerPhone" class="form-control form-control-sm" placeholder="Số điện thoại / Zalo *" required>
+        </div>
+        <div class="form-group">
+          <input type="text" id="orderStudentId" class="form-control form-control-sm" placeholder="Mã số sinh viên (VD: 74DCTT...)">
+        </div>
+        <div class="form-group">
+          <select id="orderPickupSpot" class="form-control form-control-sm">
+            <option value="Sảnh Nhà A (54 Triều Khúc)">Điểm hẹn: Sảnh Nhà A (54 Triều Khúc)</option>
+            <option value="Cổng bảo vệ số 1 (54 Triều Khúc)">Điểm hẹn: Cổng số 1 Triều Khúc</option>
+            <option value="Ký túc xá sinh viên UTT">Điểm hẹn: Ký túc xá UTT Triều Khúc</option>
+            <option value="Cơ sở Vĩnh Phúc">Điểm hẹn: Cơ sở Vĩnh Phúc</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label-xs">Hình thức thanh toán:</label>
+          <div class="payment-radios">
+            <label class="payment-radio-label">
+              <input type="radio" name="paymentMethod" value="cash" checked>
+              <span>Tiền mặt khi nhận đồ tại trường (COD)</span>
+            </label>
+            <label class="payment-radio-label">
+              <input type="radio" name="paymentMethod" value="qr">
+              <span>Chuyển khoản QR ngân hàng / MoMo</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="drawer-footer" id="cartDrawerFooter" style="display: none;">
+      <div class="cart-summary-row">
+        <span>Tạm tính:</span>
+        <span class="price-val" id="drawerSubtotal">0đ</span>
+      </div>
+      <div class="cart-summary-row highlight-green">
+        <span>Phí giao nhận nội khu UTT:</span>
+        <span class="free-shipping">0đ (Miễn phí)</span>
+      </div>
+      <div class="cart-summary-total">
+        <span>Tổng thanh toán:</span>
+        <span class="total-price-val" id="drawerTotal">0đ</span>
+      </div>
+      <button type="button" class="btn btn-primary btn-block" onclick="submitStudentOrder()">
+        <i class="fa-solid fa-circle-check"></i> Xác Nhận Đặt Hẹn Nhận Đồ
+      </button>
+      <div class="cart-guarantee-note">
+        <i class="fa-solid fa-shield-halved"></i> Được kiểm tra đồ tận tay trước khi thanh toán. Đổi trả trong 24h.
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= DRAWER: WISHLIST ================= -->
+  <div class="drawer-overlay" id="wishlistDrawerOverlay" onclick="toggleWishlistDrawer()"></div>
+  <aside class="cart-drawer" id="wishlistDrawer">
+    <div class="drawer-header">
+      <div class="drawer-header-title">
+        <i class="fa-solid fa-heart" style="color: #e63946;"></i>
+        <span>Danh Sách Yêu Thích</span>
+      </div>
+      <button type="button" class="btn-close-drawer" onclick="toggleWishlistDrawer()">&times;</button>
+    </div>
+    <div class="drawer-body">
+      <div class="empty-cart-view" id="emptyWishlistView">
+        <i class="fa-regular fa-heart empty-icon"></i>
+        <p class="empty-text">Chưa có sản phẩm nào được lưu</p>
+        <p class="empty-sub">Bấm vào biểu tượng trái tim ở từng món đồ để lưu lại và theo dõi khi cần mua nhé!</p>
+      </div>
+      <div class="cart-items-list" id="wishlistItemsList" style="display: none;">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= MODAL: POLICY & REGULATIONS ================= -->
+  <div class="modal-overlay" id="policyModal" style="display: none;">
+    <div class="modal-dialog modal-md">
+      <button type="button" class="btn-close-modal" onclick="closePolicyModal()" title="Đóng">&times;</button>
+      <div class="modal-header-clean">
+        <div class="modal-header-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+        <div>
+          <h3 class="modal-title">Quy Định & Cam Kết Giao Dịch UTT</h3>
+          <p class="modal-subtitle">Xây dựng môi trường trao đổi văn minh, an toàn cho sinh viên</p>
+        </div>
+      </div>
+      <div class="modal-body policy-body">
+        <h4>1. Tiêu Chuẩn Phân Loại Đồ Cũ (A - B - C)</h4>
+        <ul>
+          <li><strong>Hạng A (Như mới 95 - 99%):</strong> Áo quần mới mặc 1-2 lần, vải còn nguyên form, không phai màu; Giáo trình không quăn mép, không ghi chép bẩn.</li>
+          <li><strong>Hạng B (Tốt 85 - 95%):</strong> Đồ đã qua sử dụng nhưng còn rất tốt, sạch sẽ; Giáo trình có thể có một vài ghi chú hữu ích phục vụ ôn thi.</li>
+          <li><strong>Hạng C (Kinh tế 75 - 85%):</strong> Có dấu vết sử dụng nhẹ, bạc màu nhẹ nhưng giá siêu rẻ, phù hợp sinh viên muốn tiết kiệm tối đa.</li>
+        </ul>
+
+        <h4>2. Điểm Hẹn & Giao Nhận</h4>
+        <ul>
+          <li>Ưu tiên giao nhận trực tiếp tại <strong>Sảnh Nhà A, Cổng số 1 Triều Khúc</strong> hoặc <strong>Ký túc xá UTT</strong>.</li>
+          <li>Sinh viên mua đồ có quyền thử size trực tiếp và kiểm tra sách trước khi thanh toán tiền.</li>
+        </ul>
+
+        <h4>3. Chính Sách Đổi Trả Trong 24 Giờ</h4>
+        <ul>
+          <li>Nếu phát hiện sản phẩm bị lỗi rách giấu kín, sai mẫu đồng phục trường, hoặc sách thiếu trang so với mô tả, người mua có quyền yêu cầu hoàn tiền hoặc đổi sản phẩm trong vòng 24 giờ.</li>
+        </ul>
+
+        <h4>4. Đối Với Đồ Handmade (Khăn len, Hoa quà tặng)</h4>
+        <ul>
+          <li>Sản phẩm mới 100% do sinh viên tự đan/làm thủ công. Có hỗ trợ nhận thêu tên, đổi màu sắc và viết thiệp lời chúc miễn phí.</li>
+        </ul>
+      </div>
+      <div class="modal-footer-clean">
+        <button type="button" class="btn btn-primary" onclick="closePolicyModal()">Tôi Đã Hiểu</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= TOAST NOTIFICATION ================= -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- JavaScript Application -->
+  <script src="app.js"></script>
+</body>
+</html>
