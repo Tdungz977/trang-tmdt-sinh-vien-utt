@@ -1,4 +1,4 @@
-/**
+﻿/**
  * UTT PASS - Sàn Đồ Dùng & Handmade Sinh Viên UTT
  * JavaScript Application Logic
  */
@@ -20,8 +20,8 @@ const INITIAL_PRODUCTS = [
     pickupSpot: "Sảnh Nhà A - 54 Triều Khúc",
     seller: {
       name: "Hoàng Anh Tuấn (K73 - CNTT UTT)",
-      phone: "0984123456",
-      zalo: "0984123456"
+      phone: "012345678",
+      zalo: "012345678"
     },
     pros: [
       "Giá rẻ hơn mua mới tại trường hơn 100.000đ",
@@ -48,8 +48,8 @@ const INITIAL_PRODUCTS = [
     pickupSpot: "Cổng số 1 - 54 Triều Khúc",
     seller: {
       name: "Lê Thu Trang (K74 - Kinh tế Vận tải)",
-      phone: "0978654321",
-      zalo: "0978654321"
+      phone: "012345678",
+      zalo: "012345678"
     },
     pros: [
       "Tiết kiệm 50% chi phí mua áo mới",
@@ -75,8 +75,8 @@ const INITIAL_PRODUCTS = [
     pickupSpot: "Ký túc xá sinh viên UTT",
     seller: {
       name: "Nguyễn Văn Đức (K73 - Công trình)",
-      phone: "0965333222",
-      zalo: "0965333222"
+      phone: "012345678",
+      zalo: "012345678"
     },
     pros: [
       "Giá siêu rẻ chỉ 50.000đ (bằng 1 bát phở)",
@@ -101,8 +101,8 @@ const INITIAL_PRODUCTS = [
     pickupSpot: "Sảnh Nhà A - 54 Triều Khúc",
     seller: {
       name: "Phạm Hải Đăng (K74 - Cầu Đường)",
-      phone: "0912888999",
-      zalo: "0912888999"
+      phone: "012345678",
+      zalo: "012345678"
     },
     pros: [
       "Tiết kiệm ngay 200.000đ khi lấy trọn bộ cả mùa đông và mùa hè",
@@ -130,8 +130,8 @@ const INITIAL_PRODUCTS = [
     pickupSpot: "Sảnh Nhà B - 54 Triều Khúc",
     seller: {
       name: "Trần Mai Anh (K74 - Quản trị KD)",
-      phone: "0987111222",
-      zalo: "0987111222"
+      phone: "012345678",
+      zalo: "012345678"
     },
     pros: [
       "Tiết kiệm 50% so với mua tại nhà sách ngoài cổng trường",
@@ -157,8 +157,8 @@ const INITIAL_PRODUCTS = [
     pickupSpot: "Cổng số 1 - 54 Triều Khúc",
     seller: {
       name: "Vũ Quốc Bảo (K73 - Logistics UTT)",
-      phone: "0904555666",
-      zalo: "0904555666"
+      phone: "012345678",
+      zalo: "012345678"
     },
     pros: [
       "Giá chỉ 18.000đ cực rẻ",
@@ -184,8 +184,8 @@ const INITIAL_PRODUCTS = [
     pickupSpot: "Thư viện UTT Nhà A",
     seller: {
       name: "Đỗ Minh Khang (K74 - CNTT UTT)",
-      phone: "0934777888",
-      zalo: "0934777888"
+      phone: "012345678",
+      zalo: "012345678"
     },
     pros: [
       "Tổng hợp đầy đủ dạng bài tập thi giữa kỳ và đề thi trắc nghiệm các năm",
@@ -210,8 +210,8 @@ const INITIAL_PRODUCTS = [
     pickupSpot: "Sảnh Nhà A - 54 Triều Khúc",
     seller: {
       name: "Ngô Thị Lan (K73 - Kế toán UTT)",
-      phone: "0915666777",
-      zalo: "0915666777"
+      phone: "012345678",
+      zalo: "012345678"
     },
     pros: [
       "Đúng môn cơ sở ngành khối kinh tế, logistics và kế toán UTT",
@@ -236,8 +236,8 @@ const INITIAL_PRODUCTS = [
     pickupSpot: "Ký túc xá sinh viên UTT",
     seller: {
       name: "Bùi Tuấn Kiệt (K73 - Ô tô UTT)",
-      phone: "0988222333",
-      zalo: "0988222333"
+      phone: "012345678",
+      zalo: "012345678"
     },
     pros: [
       "Trọn bộ 5 môn: Triết học, Kinh tế chính trị, CNXHKH, Tư tưởng HCM, Lịch sử Đảng",
@@ -265,8 +265,8 @@ const INITIAL_PRODUCTS = [
     pickupSpot: "Sảnh Nhà A - 54 Triều Khúc",
     seller: {
       name: "CLB Nữ sinh Handmade UTT",
-      phone: "0977444555",
-      zalo: "0977444555"
+      phone: "012345678",
+      zalo: "012345678"
     },
     pros: [
       "Len đũa cuộn cotton mềm mịn, cam kết không gây ráp hay ngứa cổ",
@@ -292,8 +292,8 @@ const INITIAL_PRODUCTS = [
     pickupSpot: "Cổng số 1 - 54 Triều Khúc",
     seller: {
       name: "Nguyễn Phương Ly (K74 - CNTT)",
-      phone: "0961888111",
-      zalo: "0961888111"
+      phone: "012345678",
+      zalo: "012345678"
     },
     pros: [
       "Họa tiết vặn thừng dày dặn cản gió mùa đông siêu tốt",
@@ -318,8 +318,8 @@ const INITIAL_PRODUCTS = [
     pickupSpot: "Sảnh Nhà B - 54 Triều Khúc",
     seller: {
       name: "CLB Nữ sinh Handmade UTT",
-      phone: "0977444555",
-      zalo: "0977444555"
+      phone: "012345678",
+      zalo: "012345678"
     },
     pros: [
       "Gồm 2 chiếc khăn len đôi tone-sur-tone ý nghĩa",
@@ -347,8 +347,8 @@ const INITIAL_PRODUCTS = [
     pickupSpot: "Sảnh Nhà A - 54 Triều Khúc",
     seller: {
       name: "Nhóm SV Khởi Nghiệp UTT",
-      phone: "0936111999",
-      zalo: "0936111999"
+      phone: "012345678",
+      zalo: "012345678"
     },
     pros: [
       "Hoa kẽm nhung bền vĩnh cửu, giữ được kỷ niệm lâu dài không lo tàn héo",
@@ -374,8 +374,8 @@ const INITIAL_PRODUCTS = [
     pickupSpot: "Cổng số 1 - 54 Triều Khúc",
     seller: {
       name: "Vũ Thảo Vy (K74 - Kinh tế Vận tải)",
-      phone: "0944888222",
-      zalo: "0944888222"
+      phone: "012345678",
+      zalo: "012345678"
     },
     pros: [
       "Giá hạt dẻ chỉ 45.000đ phù hợp túi tiền sinh viên",
@@ -420,7 +420,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Load products
 function loadSavedProducts() {
-  const localSaved = localStorage.getItem("utt_pass_products");
+  const localSaved = localStorage.getItem("utt_pass_products_v2");
   if (localSaved) {
     try {
       productsData = JSON.parse(localSaved);
@@ -434,7 +434,7 @@ function loadSavedProducts() {
 }
 
 function saveProductsToLocal() {
-  localStorage.setItem("utt_pass_products", JSON.stringify(productsData));
+  localStorage.setItem("utt_pass_products_v2", JSON.stringify(productsData));
 }
 
 // Load Cart
@@ -1302,7 +1302,7 @@ function switchCampusModal() {
 }
 
 function openContactSupport() {
-  alert("📞 ĐƯỜNG DÂY HỖ TRỢ SINH VIÊN UTT:\n\n• Hotline/Zalo: 098.765.4321\n• Văn phòng hỗ trợ: Sảnh Nhà A, 54 Triều Khúc, Thanh Xuân, Hà Nội\n• Hỗ trợ giải quyết khiếu nại chất lượng đồ cũ, đổi trả trong vòng 24h.");
+  alert("📞 ĐƯỜNG DÂY HỖ TRỢ SINH VIÊN UTT:\n\n• Hotline/Zalo: 012345678\n• Văn phòng hỗ trợ: Sảnh Nhà A, 54 Triều Khúc, Thanh Xuân, Hà Nội\n• Hỗ trợ giải quyết khiếu nại chất lượng đồ cũ, đổi trả trong vòng 24h.");
 }
 
 function toggleMobileMenu() {
