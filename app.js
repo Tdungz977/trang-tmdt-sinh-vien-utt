@@ -1,5 +1,5 @@
-﻿/**
- * UTT PASS - Sàn Đồ Dùng & Handmade Sinh Viên UTT
+/**
+ * CAMPUS MART - Sàn Đồ Dùng & Handmade Sinh Viên UTT
  * JavaScript Application Logic
  */
 
@@ -1270,7 +1270,7 @@ function handlePostListing(event) {
   closePostListingModal();
   document.getElementById("postListingForm").reset();
 
-  showToast(`Đăng tin "${title}" thành công lên UTT Pass!`, "success");
+  showToast(`Đăng tin "${title}" thành công lên Campus Mart!`, "success");
   scrollToSection("catalogSection");
 }
 
